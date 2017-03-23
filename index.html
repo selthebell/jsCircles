@@ -7,7 +7,9 @@
 	<svg id="svg" xmlns="http://www.w3.org/2000/svg" width='100%' height='100%'></svg>
 
 	<script>
+	/* declared to store to the time pressed*/
 	var time_pressed;
+	/*added a parameter radius*/
 	function Circle(cx, cy, html_id,radius)
 	{
 		var html_id = html_id;
@@ -100,9 +102,11 @@
 	setInterval(playground.loop, 15);
 
 	document.onclick = function(e) {
+		/*function to set the global variable time_pressed*/
 		timeonhold();
 		console.log(time_pressed);
-		if(time_pressed>500)
+		/*set radius bigger on long hold*/
+		if(time_pressed>100)
 		{
 			radius=50;
 		}
@@ -113,6 +117,8 @@
 		playground.createNewCircle(e.x,e.y,radius);
 
 	}
+	/*function to set the global variable time_pressed*/
+
 	function timeonhold(){
 
 		var mousedown_time;
